@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!-- Site Title -->
+    <!-- Site Title/Heading -->
     <header class="container">
         <h1 class="text-center py-3">Bankio Profit</h1>
     </header>
@@ -30,8 +30,8 @@
                     <img class="w-100" src="images/image.png" alt="">
                 </div>
 
+                <!-- Calculation Section -->
                 <div class="bg-light p-5 text-center">
-
                     <!-- Income Section -->
                     <div class="pb-3">
                         <h5 class="fw-bold pb-2">Income</h5>
@@ -74,23 +74,27 @@
                         <button id="calculate-button" class="btn btn-primary shadow" type="button">Calculate</button>
                     </div>
 
-                    <!-- Total Expenses and Balance -->
+                    <!-- Total Expenses and Balance after Calculation -->
                     <div class="mb-4">
                         <h5>Total Expenses: <span id="total-expenses">000</span></h5>
-                        <h5>Balance: <span id="net-balance">000</span></h5>
+                        <h5>Balance: <span id="total-balance">000</span></h5>
                     </div>
 
+                    <!-- Saving Section -->
                     <div class="row mb-3">
+                        <!-- Input the Savings Value -->
                         <label class="col-2 col-lg-1 text-end col-form-label">Save:</label>
                         <div class="col-4 col-lg-5">
-                            <input type="text" class="form-control" placeholder="0" id="">
+                            <input type="text" class="form-control" placeholder="0" id="save-input">
                         </div>
                         <p class="col-2 col-lg-1">%</p>
+
+                        <!-- Saving Button -->
                         <button id="save-button" class="btn btn-primary shadow col-4 col-lg-4"
                             type="button">Save</button>
                     </div>
 
-
+                    <!-- Saving Amount & Remaing Balance after Calculation -->
                     <div class="mb-4">
                         <h5>Saving Amount: <span id="saving-balance">000</span></h5>
                         <h5>Remaining Balance: <span id="remaining-balance">000</span></h5>
