@@ -19,20 +19,27 @@ function calculation(foodAmount, rentAmount, clothesAmount, inputAmount) {
         alert("Please provide a positive amount!");
     }
 
-    // ---- Calculation
+    // ---- Total Expense & Balance
     else if (foodAmount >= 0 && rentAmount >= 0 && clothesAmount >= 0 && inputAmount > 0) {
         const totalExpenses = foodAmount + rentAmount + clothesAmount;
         if (totalExpenses < inputAmount) {
             expensesResult.innerText = totalExpenses;
             balanceResult.innerText = inputAmount - totalExpenses;
         }
+
+        // ---- Error Message
         else {
             alert("Not enough balance to expense!");
         }
     }
+
+    // ---- Error Message
+    else {
+        alert("Please Input the Fields")
+    }
 }
 
-// ---- Click Event for Calculate Button
+// ---- Click Event for Calculate Button  ----
 document.getElementById("calculate-button").addEventListener("click", function () {
     // ---- Get Input Field Id
     const inputAmount = allInputValue("income")
@@ -44,33 +51,43 @@ document.getElementById("calculate-button").addEventListener("click", function (
     calculation(foodAmount, rentAmount, clothesAmount, inputAmount);
 });
 
-// ---- Click Event for Save Button
+// ---- Click Event for Save Button ----
 document.getElementById("save-button").addEventListener("click", function () {
+
+    // ---- Get Saving Input Field Id
     const savingAmount = allInputValue("saving");
     const savingResult = document.getElementById("saving-balance");
 
+    // ---- Net Balance
     const balanceResult = document.getElementById("total-balance");
     const balanceValue = parseFloat(balanceResult.innerText);
 
+    // ---- Remaining Balance
     const remainingResult = document.getElementById("remaining-balance");
 
-    if (savingAmount > 0 && savingAmount <= 100) {
+    // ---- Error Message
+    if (savingAmount > 100) {
+        alert("Put a number bellow 100")
+    }
+
+    // ---- Saving Amount
+    else if (savingAmount > 0 && savingAmount <= 100) {
         if (balanceValue > 0) {
             const savingValue = (savingAmount * balanceValue) / 100;
-            savingResult.innerText = savingValue.toFixed(4);
+            savingResult.innerText = savingValue.toFixed(3);
 
             const netBalance = balanceValue - savingValue;
-            remainingResult.innerText = netBalance.toFixed(4);
+            remainingResult.innerText = netBalance.toFixed(3);
         }
+
+        // ---- Error Message
         else {
             alert("Balance is too low for saving");
         }
     }
-    else if (savingAmount > 100) {
-        alert("Put a number bellow 100")
-    }
+
+    // ---- Error Message
     else {
         alert("Please fill the saving persentage");
     }
-
 });
