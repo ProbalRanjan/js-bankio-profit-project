@@ -37,10 +37,10 @@
                         <h5 class="fw-bold pb-2">Income</h5>
                         <!-- Input the Income Value -->
                         <div class="row mb-3">
-                            <label for="inputPassword" class="col-4 col-lg-6 text-end col-form-label">Income:</label>
+                            <label class="col-4 col-lg-6 text-end col-form-label">Income:</label>
                             <div class="col-8 col-lg-6">
                                 <input type="text" class="form-control" placeholder="Input Income Amount"
-                                    id="inputPassword">
+                                    id="income-input">
                             </div>
                         </div>
                     </div>
@@ -50,49 +50,50 @@
                         <h5 class="fw-bold pb-2">Expenses</h5>
                         <!-- Input the Expenses Value -->
                         <div class="row mb-3">
-                            <label for="inputPassword" class="col-4 col-lg-6 text-end col-form-label">Food:</label>
+                            <label class="col-4 col-lg-6 text-end col-form-label">Food:</label>
                             <div class="col-8 col-lg-6">
-                                <input type="text" class="form-control" placeholder="0" id="inputPassword">
+                                <input type="text" class="form-control" placeholder="0" id="food-input">
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputPassword" class="col-4 col-lg-6 text-end col-form-label">Rent:</label>
+                            <label class="col-4 col-lg-6 text-end col-form-label">Rent:</label>
                             <div class="col-8 col-lg-6">
-                                <input type="text" class="form-control" placeholder="0" id="inputPassword">
+                                <input type="text" class="form-control" placeholder="0" id="rent-input">
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputPassword" class="col-4 col-lg-6 text-end col-form-label">Clothes:</label>
+                            <label class="col-4 col-lg-6 text-end col-form-label">Clothes:</label>
                             <div class="col-8 col-lg-6">
-                                <input type="text" class="form-control" placeholder="0" id="inputPassword">
+                                <input type="text" class="form-control" placeholder="0" id="clothes-input">
                             </div>
                         </div>
                     </div>
 
                     <!-- Calculate Button -->
                     <div class="d-grid gap-2 col-6 mx-auto pb-4">
-                        <button id="calculate-balance" class="btn btn-primary shadow" type="button">Calculate</button>
+                        <button id="calculate-button" class="btn btn-primary shadow" type="button">Calculate</button>
                     </div>
 
                     <!-- Total Expenses and Balance -->
                     <div class="mb-4">
-                        <h5>Total Expenses: <span>000</span></h5>
-                        <h5>Balance: <span>000</span></h5>
+                        <h5>Total Expenses: <span id="total-expenses">000</span></h5>
+                        <h5>Balance: <span id="net-balance">000</span></h5>
                     </div>
 
                     <div class="row mb-3">
-                        <label for="inputPassword" class="col-2 col-lg-1 text-end col-form-label">Save:</label>
+                        <label class="col-2 col-lg-1 text-end col-form-label">Save:</label>
                         <div class="col-4 col-lg-5">
-                            <input type="text" class="form-control" placeholder="0" id="inputPassword">
+                            <input type="text" class="form-control" placeholder="0" id="">
                         </div>
                         <p class="col-2 col-lg-1">%</p>
-                        <button class="btn btn-primary shadow col-4 col-lg-4" type="button">Save</button>
+                        <button id="save-button" class="btn btn-primary shadow col-4 col-lg-4"
+                            type="button">Save</button>
                     </div>
 
 
                     <div class="mb-4">
-                        <h5>Saving Amount: <span>000</span></h5>
-                        <h5>Remaining Balance: <span>000</span></h5>
+                        <h5>Saving Amount: <span id="saving-balance">000</span></h5>
+                        <h5>Remaining Balance: <span id="remaining-balance">000</span></h5>
                     </div>
                 </div>
             </div>
